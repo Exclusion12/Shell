@@ -118,8 +118,11 @@ int main(void) {
 	p=0;
 	printf("\nuser >>");
 	fgets(line, sizeof(line), stdin);
+	if (line[strlen(line)-2]=='|'){perror("syntax error");}
+	else{
 	splitpip();
 	splitspace();
 	execute();
+	}
 	}
 		}
